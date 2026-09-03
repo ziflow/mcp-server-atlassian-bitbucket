@@ -12,6 +12,7 @@
   "bin": {
     "mcp-atlassian-bitbucket": "./dist/index.js"
   },
+  "bundleDependencies": true,
   "scripts": {
     "build": "tsc",
     "clean": "rm -rf dist coverage",
