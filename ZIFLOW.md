@@ -7,8 +7,10 @@ This is Ziflow's frozen copy of [aashari/mcp-server-atlassian-bitbucket](https:/
 Point the MCP server at the `stable` branch instead of the npm package:
 
 ```
-npx github:ziflow/mcp-server-atlassian-bitbucket#stable
+npx --no-audit github:ziflow/mcp-server-atlassian-bitbucket#stable
 ```
+
+`--no-audit` matters: after a fresh install npx runs `npm audit`, which can hang for a minute or more against some registries. Without it the first start after a bump takes 60s+ instead of ~25s.
 
 `stable` is the only supported ref. Clients re-resolve it on every start, so moving the branch is enough to roll a new version out to everyone.
 
